@@ -19,6 +19,13 @@ npm run lint     # Run ESLint
 - **Tailwind CSS v4** (configured via PostCSS, not `tailwind.config.js`)
 - **Geist** font family (sans + mono) loaded via `next/font/google`
 
+## Docs-First Rule
+
+**IMPORTANT:** Before generating any code, always read the relevant file(s) in the `/docs` directory first. The docs define the intended design, behavior, and constraints for each feature area. Code must align with what the docs specify.
+
+Current docs:
+- `docs/ui.md` — UI design and component guidelines
+
 ## Architecture
 
 This is a fresh Next.js App Router project — the lifting diary feature set has not yet been built. The entry points are:
