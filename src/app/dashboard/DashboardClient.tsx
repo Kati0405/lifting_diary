@@ -5,6 +5,7 @@ import { useState } from "react";
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 
+import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import {
   Popover,
@@ -79,9 +80,19 @@ export default function DashboardClient({ workouts, date }: Props) {
         </div>
 
         <div className="flex flex-col gap-4">
-          <h2 className="text-sm font-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">
-            Workouts — {format(selectedDate, "do MMM yyyy")}
-          </h2>
+          <div className="flex items-center justify-between">
+            <h2 className="text-sm font-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">
+              Workouts — {format(selectedDate, "do MMM yyyy")}
+            </h2>
+            <Button
+              size="sm"
+              onClick={() =>
+                router.push(`/dashboard/workout/new?date=${date}`)
+              }
+            >
+              Log workout
+            </Button>
+          </div>
 
           {workouts.length === 0 ? (
             <p className="text-zinc-400 text-sm py-8 text-center">

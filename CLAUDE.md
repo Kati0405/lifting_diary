@@ -26,6 +26,8 @@ npm run lint     # Run ESLint
 Current docs:
 - `docs/ui.md` — UI design and component guidelines
 - `docs/data-fetching.md` — data fetching rules (Server Components only, Drizzle ORM, `/data` helpers, user-scoped queries)
+- `docs/auth.md` — authentication standards (Clerk, route protection, server/client usage patterns)
+- `docs/data-mutations.md` — data mutation rules (Server Actions, Zod validation, `/data` helpers, user-scoped writes)
 
 ## Architecture
 
