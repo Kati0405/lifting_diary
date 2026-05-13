@@ -6,7 +6,11 @@
       "Bash(node -e \"require\\('date-fns'\\)\")",
       "Bash(npx shadcn@latest add input label --yes)",
       "Bash(npx shadcn@latest add sonner --yes)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git checkout *)",
+      "Bash(git merge *)",
+      "Bash(git stash *)"
     ]
   },
   "enableAllProjectMcpServers": true,

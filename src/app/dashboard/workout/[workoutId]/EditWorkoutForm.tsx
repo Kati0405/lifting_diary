@@ -15,12 +15,18 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover';
 import { toast } from 'sonner';
-import { createWorkoutAction } from './actions';
+import { updateWorkoutAction } from './actions';
 
-export default function NewWorkoutForm() {
+interface Props {
+  workoutId: string;
+  initialName: string;
+  initialStartedAt: Date;
+}
+
+export default function EditWorkoutForm({ workoutId, initialName, initialStartedAt }: Props) {
   const router = useRouter();
-  const [name, setName] = useState('');
-  const [date, setDate] = useState<Date>(new Date());
+  const [name, setName] = useState(initialName);
+  const [date, setDate] = useState<Date>(initialStartedAt);
   const [calOpen, setCalOpen] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [pending, setPending] = useState(false);
@@ -31,12 +37,12 @@ export default function NewWorkoutForm() {
     setError(null);
 
     try {
-      const result = await createWorkoutAction({ name, startedAt: date });
+      const result = await updateWorkoutAction(workoutId, { name, startedAt: date });
       if (result.error) {
-        setError('Failed to create workout. Please try again.');
+        setError('Failed to update workout. Please try again.');
       } else {
-        toast.success('Workout created!');
-        router.push('/dashboard');
+        toast.success('Workout updated!');
+        router.push(`/dashboard?date=${format(date, 'yyyy-MM-dd')}`);
       }
     } finally {
       setPending(false);
@@ -88,7 +94,7 @@ export default function NewWorkoutForm() {
 
       <div className='flex gap-3'>
         <Button type='submit' disabled={pending || !name.trim()}>
-          {pending ? 'Saving…' : 'Create workout'}
+          {pending ? 'Saving…' : 'Save changes'}
         </Button>
         <Button
           type='button'

@@ -28,6 +28,7 @@ Current docs:
 - `docs/data-fetching.md` — data fetching rules (Server Components only, Drizzle ORM, `/data` helpers, user-scoped queries)
 - `docs/auth.md` — authentication standards (Clerk, route protection, server/client usage patterns)
 - `docs/data-mutations.md` — data mutation rules (Server Actions, Zod validation, `/data` helpers, user-scoped writes)
+- `docs/routing.md` — routing conventions (all routes under `/dashboard`, middleware-based route protection)
 
 ## Architecture
 
