@@ -10,7 +10,10 @@
       "Bash(git commit *)",
       "Bash(git checkout *)",
       "Bash(git merge *)",
-      "Bash(git stash *)"
+      "Bash(git stash *)",
+      "Bash(node -e \"const {Show} = require\\('@clerk/nextjs'\\); console.log\\(Show.toString\\(\\).slice\\(0, 500\\)\\)\")",
+      "Bash(node -e \"const {SignUpButton} = require\\('@clerk/nextjs'\\); console.log\\(SignUpButton.toString\\(\\).slice\\(0, 1000\\)\\)\")",
+      "Bash(node -e ' *)"
     ]
   },
   "enableAllProjectMcpServers": true,
